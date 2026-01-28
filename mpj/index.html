@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Prayer Journal</title>
+  <meta name="description" content="My Prayer Journal helps you pray with clarity, consistency, and peace. Start your day with God-first focus." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a33;
+      --text:#eaf0ff;
+      --muted:#b7c3e6;
+      --line:rgba(255,255,255,.12);
+      --accent:#6ea8ff;
+      --accent2:#72f1d0;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background: radial-gradient(900px 500px at 15% 10%, rgba(110,168,255,.25), transparent 55%),
+                  radial-gradient(700px 500px at 85% 20%, rgba(114,241,208,.18), transparent 60%),
+                  radial-gradient(900px 600px at 50% 100%, rgba(110,168,255,.10), transparent 60%),
+                  var(--bg);
+      min-height:100vh;
+    }
+    a{color:inherit}
+    .wrap{max-width:980px; margin:0 auto; padding:28px 18px 56px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:10px 0 28px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+    }
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(110,168,255,.9), rgba(114,241,208,.85));
+      box-shadow: 0 12px 40px rgba(110,168,255,.22);
+    }
+    .brand b{letter-spacing:.2px}
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; font-size:14px; color:var(--muted);
+      padding:8px 10px; border-radius:10px;
+      border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text); background:rgba(255,255,255,.04)}
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
+    .card{
+      background: rgba(15,26,51,.75);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      backdrop-filter: blur(8px);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:44px; line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px; line-height:1.6;
+      max-width:54ch;
+    }
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 0}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      background: rgba(255,255,255,.03);
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      background: rgba(255,255,255,.04);
+    }
+    .btn.primary{
+      border-color: rgba(110,168,255,.55);
+      background: linear-gradient(135deg, rgba(110,168,255,.95), rgba(114,241,208,.75));
+      color:#071021;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .fine{
+      margin-top:12px;
+      color:rgba(183,195,230,.85);
+      font-size:12.5px;
+      line-height:1.5;
+    }
+    .mock{
+      display:flex; flex-direction:column; gap:12px;
+      height:100%;
+    }
+    .mockBox{
+      flex:1;
+      border-radius:22px;
+      border:1px dashed rgba(255,255,255,.22);
+      background: rgba(255,255,255,.03);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:280px;
+    }
+    .mockTop{display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px}
+    .mockTitle{font-weight:700; color:var(--text); margin:14px 0 6px; font-size:18px}
+    .mockText{color:var(--muted); line-height:1.6; font-size:14px}
+    .mockBtns{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .grid{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;
+      margin-top:16px;
+    }
+    @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
+    .feature h3{margin:0 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
+    footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      display:flex; gap:14px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+      color:var(--muted); font-size:13px;
+    }
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/mpj/">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>My Prayer Journal</b><br>
+          <span style="color:var(--muted); font-size:13px;">A simple way to pray daily</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Start your day with prayer — not pressure.</h1>
+        <p class="sub">
+          My Prayer Journal helps you write what’s on your heart, pray with Scripture,
+          and build a steady daily habit. Simple. Peaceful. God-first.
+        </p>
+
+        <div class="ctaRow">
+          <!-- Replace # with your real App Store / Play Store link when ready -->
+          <a class="btn primary" href="#" aria-label="Get the app">Get the app</a>
+          <a class="btn" href="#how">See how it works</a>
+        </div>
+
+        <p class="fine">
+          Tip: once your app links are ready, replace the “Get the app” button URL.
+          Your legal pages are already live at <a href="/privacy.html">Privacy</a> and <a href="/terms.html">Terms</a>.
+        </p>
+
+        <div class="pillrow">
+          <span class="pill">📖 Scripture-based prompts</span>
+          <span class="pill">📝 Daily journal flow</span>
+          <span class="pill">🌿 Calm, focused experience</span>
+        </div>
+      </div>
+
+      <div class="card mock">
+        <div class="mockBox">
+          <div class="mockTop">
+            <span>Today</span>
+            <span>Morning</span>
+          </div>
+          <div>
+            <div class="mockTitle">A quiet place to pray</div>
+            <div class="mockText">
+              Write your prayer in your own words, then choose a matching verse.
+              When you pray God’s Word, you pray with confidence.
+            </div>
+            <div class="mockBtns">
+              <span class="pill">“Lord, guide me today.”</span>
+              <span class="pill">“Give me peace.”</span>
+            </div>
+          </div>
+          <div class="mockTop">
+            <span style="opacity:.8;">Streak: 7 days</span>
+            <span style="opacity:.8;">Saved</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="card" style="margin-top:16px;">
+      <h2 style="margin:0 0 10px;">Why My Prayer Journal</h2>
+      <div class="grid">
+        <div class="feature">
+          <h3>Pray clearly</h3>
+          <p>Turn scattered thoughts into a simple written prayer you can return to anytime.</p>
+        </div>
+        <div class="feature">
+          <h3>Pray with Scripture</h3>
+          <p>Choose verses that match your prayer so your faith stays anchored in God’s promises.</p>
+        </div>
+        <div class="feature">
+          <h3>Pray consistently</h3>
+          <p>Small daily steps create a strong habit — not by guilt, but by grace and rhythm.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="card" style="margin-top:12px;">
+      <h2 style="margin:0 0 10px;">How it works</h2>
+      <ol style="margin:0; padding-left:18px; color:var(--muted); line-height:1.8;">
+        <li>Write what’s on your heart (a few lines is enough).</li>
+        <li>Select a verse that strengthens your prayer.</li>
+        <li>Save it, revisit it, and watch your prayer life grow day by day.</li>
+      </ol>
+      <div class="ctaRow" style="margin-top:16px;">
+        <a class="btn primary" href="#">Get the app</a>
+        <a class="btn" href="mailto:support@atpcreative.cc">Contact support</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="y"></span> ATP Creative. All rights reserved.</span>
+      <span style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
