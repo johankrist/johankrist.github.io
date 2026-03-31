@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ATP Creative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ATP Creative builds thoughtful digital tools that help people create better daily habits with intention." />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #eef4ff, #ffffff);
+      padding: 90px 20px 70px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 16px;
+      font-size: 3rem;
+      color: #0f172a;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      font-size: 1.15rem;
+      color: #475569;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 18px;
+      color: #0f172a;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+      color: #475569;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #0f172a;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: #475569;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .about-box {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      max-width: 850px;
+      margin: 40px auto 0;
+      text-align: center;
+      color: #475569;
+    }
+
+    footer {
+      background: #eef2f7;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #64748b;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ATP Creative</h1>
+    <p>
+      We build thoughtful digital tools designed to help people live with more
+      intention, focus, and better daily habits.
+    </p>
+    <a class="btn" href="#projects">Explore Projects</a>
+  </header>
+
+  <section>
+    <h2>What We Build</h2>
+    <p class="intro">
+      ATP Creative is a home for simple app ideas that turn everyday phone habits
+      into healthier, more mindful routines. Our focus is on tools that gently
+      encourage better habits through intentional pauses and practical reminders.
+    </p>
+
+    <div class="about-box">
+      We believe technology should not only capture attention, but also help
+      people pause, reflect, and build habits that support a better life.
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="intro">
+      Here are some of the concepts currently being explored by ATP Creative.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>My Prayer Journal</h3>
+        <p>
+          A prayer-first habit app that gently reminds users to pause and pray
+          before opening selected apps.
+        </p>
+        <a href="/mpj/">View Project →</a>
+      </div>
+
+      <div class="card">
+        <h3>Water Lock</h3>
+        <p>
+          A hydration habit app that pauses selected apps until users take a
+          moment to drink water.
+        </p>
+        <a href="/wl/">View Project →</a>
+      </div>
+
+      <div class="card">
+        <h3>Meditate Lock</h3>
+        <p>
+          A mindfulness habit app that invites users to meditate before unlocking
+          selected apps.
+        </p>
+        <a href="/ml/">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Simple Ideas. Intentional Habits.</h2>
+    <p class="intro">
+      ATP Creative is currently developing and testing concept pages for habit-based
+      tools that help users build healthier daily rhythms. More projects and updates
+      will be added over time.
+    </p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> ATP Creative
+    <br /><br />
+    <a href="/privacy.html">Privacy Policy</a> ·
+    <a href="/terms.html">Terms of Use</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
